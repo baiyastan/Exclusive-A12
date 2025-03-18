@@ -4,6 +4,7 @@ import Carousel from 'react-bootstrap/Carousel'
 import iphone from "../../assets/image/iphone.png"
 import { useDispatch, useSelector } from 'react-redux'
 import { getCategory } from '../../redux/category/categorySlice'
+import { setCategory } from '../../redux/product/productSlice'
 
 function Banner() {
     const {category, loading, error} = useSelector((state) => state.category)
@@ -14,6 +15,9 @@ function Banner() {
         dispatch(getCategory())
     }, [dispatch])
 
+    function sendItem (item) {
+        dispatch(setCategory(item))
+    }
     
     
 
@@ -23,7 +27,7 @@ function Banner() {
                 <ul>
                     {
                         category.map((item, index) =>(
-                            <li key={index}>{item}</li>
+                            <li onClick={() => sendItem(item)} key={index}>{item}</li>
                         ))
                     }
                 </ul>
