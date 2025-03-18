@@ -14,14 +14,18 @@ function Banner() {
         dispatch(getCategory())
     }, [dispatch])
 
-    console.log(category);
+    
     
 
     return (
         <div className='banner container'>
             <div className='category'>
                 <ul>
-                    <li>Woman's Fashion</li>
+                    {
+                        category.map((item, index) =>(
+                            <li key={index}>{item}</li>
+                        ))
+                    }
                 </ul>
             </div>
             <div className='carousel'>

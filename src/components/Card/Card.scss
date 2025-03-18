@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Jost:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rosario:ital,wght@0,300..700;1,300..700&display=swap');
+
+.product-card {
+    width: 272px;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    background-color: #fff;
+    text-align: center;
+    font-family: "Poppins", sans-serif ;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    position: relative;
+
+    .pos-img {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        img {
+            background-color: #fff;
+            border-radius: 50%;
+            padding: 5px;
+        }
+    }
+  
+    .send {
+      background-color: #ff4d4d;
+      color: #fff;
+      width: 55px;
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-size: 14px;
+      margin-bottom: 10px;
+      top: 10px;
+      margin-left: 10px;
+    }
+
+    .discount-badge {
+        width: 270px;
+        height: 250px;
+        padding: 10px 0 0 0;
+        background-color: rgb(245, 245, 245);
+        border-radius: 6px;
+    }
+  
+    .product-image {
+      width: 100%;
+      height: auto;
+      margin-bottom: 20px;
+    }
+
+    .texts {
+        padding: 10px 0 10px 20px;
+    }
+  
+    .product-title {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+
+      h2 {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px;
+        letter-spacing: 0%;
+        text-align: left;
+      }
+    }
+
+    
+  
+    .price {
+      display: flex;
+      gap: 20px;
+
+      p {
+        color: red;
+        font-weight: 600;
+      }
+
+      del {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px;
+        letter-spacing: 0%;
+        text-align: left;
+        text-decoration-line: line-through;
+      }
+    }
+  
+    .rating {
+        margin-top: 10px;
+
+        img {
+          margin-left: -120px;
+        }
+
+        span {
+          color: #a0a0a0;
+          font-size: 14px;
+        }
+    }
+  }
