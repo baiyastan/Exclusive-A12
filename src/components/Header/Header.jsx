@@ -1,11 +1,24 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Link } from 'react-router-dom'
 import "./Header.scss"
 import search from "../../assets/svg/search.svg"
 import wishlist from "../../assets/svg/wishlist.svg"
 import cart from "../../assets/svg/cart.svg"
+import { useDispatch } from 'react-redux'
+import { setSearch } from '../../redux/product/productSlice'
+
 
 function Header() {
+  const [title, setTitle] = useState()
+  const dispatch = useDispatch()
+
+  function handleKeyDown(e) {
+    if(e.keyCode == 13) {
+      dispatch(setSearch(title))
+      setTitle("")
+    }
+  }
+
   return (
     <div className='header'>
       <div className='top-header'>
@@ -41,7 +54,13 @@ function Header() {
         </div>
         <div className='header-right'>
           <div className='search'>
-            <input type="text" />
+            <input 
+              value={title} 
+              onChange={(e) => setTitle(e.target.value)}
+              type="text" 
+              placeholder='What are you looking for?'
+              onKeyDown={handleKeyDown}
+               />
             <img src={search} alt="" />
           </div>
           <div className='icons'>

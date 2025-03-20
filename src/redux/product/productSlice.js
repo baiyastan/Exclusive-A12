@@ -4,9 +4,17 @@ import { apiClient } from "../../axios/apiClient";
 
 export const getProduct = createAsyncThunk(
     "products/get",
-    async(category, thunkAPI) => {
+    async({category, search }, thunkAPI) => {
         try {
-            const res = await apiClient.get(`/products/category/${category}`)
+            let url = "/products"
+            console.log(search);
+            
+            if(search) {
+                url = `/products/search?q=${search}`
+            } else if(category)  {
+                url = `/products/category/${category}`
+            }
+            const res = await apiClient.get(url)
 
             return res.data.products
         } catch (error) {
@@ -21,11 +29,18 @@ const productSlice = createSlice({
         products: [],
         loading: false,
         error: null,
-        categoryList: "laptops"
+        categoryList: "laptops",
+        search: ""
     }, 
     reducers: {
         setCategory: (state, action) => {
             state.categoryList = action.payload;
+            state.search = ""
+        }, 
+
+        setSearch: (state, action) => {
+            state.search = action.payload;
+            state.categoryList = "";
         }
     },
     extraReducers: (builder) => {
@@ -44,6 +59,6 @@ const productSlice = createSlice({
          })
     }
 })
-export const {setCategory} = productSlice.actions
+export const {setCategory, setSearch} = productSlice.actions
 
 export default productSlice.reducer
