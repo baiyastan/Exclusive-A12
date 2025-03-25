@@ -1,0 +1,213 @@
+.list {
+    width: 1170px;
+    height: 984px;
+    margin: 0 auto;
+
+    .list-box {
+        width: 100%;
+        height: 438px;
+
+        .list-count {
+            width: 100%;
+            height: 56px;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 80px;
+
+            p {
+                color: rgb(0, 0, 0);
+                font-family: Poppins;
+                font-size: 20px;
+                font-weight: 400;
+                margin-top: 10px;
+
+            }
+
+            button {
+                width: 223px;
+                height: 56px;
+                color: rgb(0, 0, 0);
+                font-family: Poppins;
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 24px;
+                letter-spacing: 0%;
+                text-align: center;
+                box-sizing: border-box;
+                border: 1px solid rgba(0, 0, 0, 0.5);
+                border-radius: 4px;
+
+            }
+
+            .class {
+                display: flex;
+                gap: 16px;
+
+
+
+                .div {
+                    width: 20px;
+                    height: 40px;
+                    border-radius: 4px;
+                    background: rgb(219, 68, 68);
+                    margin-top: 10px;
+                }
+
+
+
+            }
+
+
+
+        }
+
+        .list-product {
+            display: flex;
+            gap: 30px;
+
+
+            .cart {
+                width: 270px;
+                height: 322px;
+
+                .cart-top {
+                    width: 270px;
+                    height: 250px;
+                    border-radius: 4px;
+                    margin: 16px 0px;
+                    padding: 12px 0 0 0;
+                    background: rgb(245, 245, 245);
+
+                    .cart-discount {
+                        display: flex;
+                        margin-left: 10px;
+                        justify-content: space-between;
+                        position: relative;
+
+                        p {
+                            width: 55px;
+                            height: 26px;
+                            border-radius: 4px;
+                            background: rgb(219, 68, 68);
+                            color: rgb(250, 250, 250);
+                            font-family: Poppins;
+                            font-size: 12px;
+                            font-weight: 400;
+                            padding: 5px 5px 5px 0;
+                            text-align: center;
+                        }
+
+                        img {
+                            position: absolute;
+                            right: 21px;
+                            width: 34px;
+                            height: 34px;
+                        }
+
+
+                    }
+
+                    .cart-img {
+                        padding-left: 46px;
+
+                        img {
+                            width: 178px;
+                            height: 129px;
+                        }
+                    }
+
+                    .add-cart {
+                        width: 270px;
+                        height: 41px;
+                        border-radius: 0px 0px 4px 4px;
+                        background: rgb(0, 0, 0);
+                        display: flex;
+                        gap: 8px;
+                        justify-content: center;
+                        align-items: center;
+                        margin-top: 25px;
+
+
+                        img {
+                            width: 24px;
+                            height: 24px;
+                        }
+
+                        p {
+                            color: rgb(255, 255, 255);
+                            font-family: Poppins;
+                            font-size: 12px;
+                            font-weight: 400;
+                            line-height: 18px;
+                            letter-spacing: 0%;
+                            text-align: center;
+                            margin-top: 15px;
+                        }
+                    }
+
+                }
+
+            }
+
+            .cart-bottom {
+                p {
+                    color: rgb(0, 0, 0);
+                    font-family: Poppins;
+                    font-size: 16px;
+                    font-weight: 500;
+                    line-height: 24px;
+                    letter-spacing: 0%;
+                    text-align: left;
+                }
+
+                .text {
+                    display: flex;
+                    gap: 12px;
+
+                    h5 {
+                        color: rgb(146, 143, 143);
+                        font-family: Poppins;
+                        font-size: 16px;
+                        font-weight: 500;
+                        line-height: 24px;
+                        letter-spacing: 0%;
+                        text-align: left;
+                        text-decoration-line: line-through;
+                        margin-top: -10px;
+
+
+                    }
+
+                    p {
+                        /* Title/16PX Medium */
+                        color: rgb(219, 68, 68);
+                        font-family: Poppins;
+                        font-size: 16px;
+                        font-weight: 500;
+                        line-height: 24px;
+                        letter-spacing: 0%;
+                        text-align: left;
+                        margin-top: -10px;
+                    }
+                }
+
+                .star {
+                    display: flex;
+                    gap: 8px;
+                    margin-top: -15px;
+
+                    p {
+                        /* Title/14PX Semibold */
+                        color: rgb(76, 69, 69);
+                        font-family: Poppins;
+                        font-size: 14px;
+                        font-weight: 600;
+                        letter-spacing: 0%;
+                        text-align: center;
+                        margin-bottom: 2px;
+                    }
+                }
+            }
+        }
+    }
+}

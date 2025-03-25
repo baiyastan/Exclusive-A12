@@ -6,17 +6,25 @@ import wishlist from "../../assets/svg/wishlist.svg"
 import cart from "../../assets/svg/cart.svg"
 import { useDispatch } from 'react-redux'
 import { setSearch } from '../../redux/product/productSlice'
+import { useTranslation } from 'react-i18next'
 
 
 function Header() {
   const [title, setTitle] = useState()
   const dispatch = useDispatch()
+  const {t, i18n} = useTranslation()
 
   function handleKeyDown(e) {
     if(e.keyCode == 13) {
       dispatch(setSearch(title))
       setTitle("")
     }
+  }
+
+  function handleChangeLng(event){
+    let lng =event.target.value;
+
+    i18n.changeLanguage(lng)
   }
 
   return (
@@ -27,7 +35,7 @@ function Header() {
           Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!
             <Link>ShopNow</Link>
           </p>
-          <select>
+          <select onChange={handleChangeLng}>
             <option value="kg">KGZ</option>
             <option value="en">ENG</option>
             <option value="ru">RUS</option>
@@ -36,7 +44,7 @@ function Header() {
       </div>
       <div className='main-header container'>
         <div className='header-left'>
-          <Link to="/">Exclusive</Link>
+          <Link to="/">{t("logo")}</Link>
           <ul>
             <li>
               <Link to="/">Home</Link>
@@ -64,7 +72,9 @@ function Header() {
             <img src={search} alt="" />
           </div>
           <div className='icons'>
-            <img src={wishlist} alt="" />
+            <Link to="/wishlist">
+              <img src={wishlist} alt="" />
+            </Link>
             <img src={cart} alt="" />
           </div>
         </div>

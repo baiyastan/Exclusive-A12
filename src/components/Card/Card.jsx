@@ -2,10 +2,13 @@ import React from 'react'
 import "./Card.scss"
 
 function Card({pro}) {
+
+  function findPrice (a,b) {
+  }
   return (
     <div className='product-card'>
           <div className="discount-badge">
-            <p className='send'>-40%</p>
+            <p className='send'>-{pro.discountPercentage}</p>
             <img src={pro.thumbnail} alt="HAVIT HV-G92 Gamepad" />
           </div>
 
@@ -17,16 +20,16 @@ function Card({pro}) {
           
           <div className='texts'>
             <div className="product-title">
-              <h2>HAVIT HV-G92 Gamepad</h2>
+              <h2>{pro.title}</h2>
             </div>
             <div className="price">
-              <p>$120</p>
-              <del>$160</del>
+              <p>${findPrice(pro.price, pro.discountPercentage)}</p>
+              <del>${pro.price}</del>
             </div>
 
             <div className="rating">
               <img src="" alt="" />
-              <span>(88)</span>
+              <span>({pro.stock})</span>
             </div>
           </div>
         </div>
